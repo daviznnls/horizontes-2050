@@ -58,26 +58,49 @@
 
         <section id="dicas" class="dicas">
             <h2>Dicas para um estilo de vida sustentável</h2>
+            <div class="dicas-filtros">
+                <button class="filtro-btn active" data-categoria="todas">Todas</button>
+                <button class="filtro-btn" data-categoria="energia">Energia</button>
+                <button class="filtro-btn" data-categoria="agua">Água</button>
+                <button class="filtro-btn" data-categoria="reciclagem">Reciclagem</button>
+                <button class="filtro-btn" data-categoria="transporte">Transporte</button>
+            </div>
             <div class="cards-container">
-                <div class="card">
+                <div class="card" data-categoria="energia">
                     <div class="card-icon">💡</div>
                     <h3>Economize Energia</h3>
                     <p>Troque lâmpadas comuns por LED e aproveite a luz natural</p>
+                    <button class="saiba-mais-card">Saiba mais</button>
+                    <div class="card-detalhe" style="display:none;">
+                        <p>Desligue aparelhos da tomada quando não estiver usando e prefira eletrodomésticos com selo Procel.</p>
+                    </div>
                 </div>
-                <div class="card">
+                <div class="card" data-categoria="agua">
                     <div class="card-icon">🚰</div>
                     <h3>Economize Água</h3>
                     <p>Tome banhos mais curtos e conserte vazamentos</p>
+                    <button class="saiba-mais-card">Saiba mais</button>
+                    <div class="card-detalhe" style="display:none;">
+                        <p>Reaproveite água da chuva para regar plantas e lavar áreas externas.</p>
+                    </div>
                 </div>
-                <div class="card">
+                <div class="card" data-categoria="reciclagem">
                     <div class="card-icon">♻️</div>
                     <h3>Recicle</h3>
                     <p>Separe corretamente seus resíduos para reciclagem</p>
+                    <button class="saiba-mais-card">Saiba mais</button>
+                    <div class="card-detalhe" style="display:none;">
+                        <p>Lave embalagens antes de descartar e informe-se sobre a coleta seletiva em sua cidade.</p>
+                    </div>
                 </div>
-                <div class="card">
+                <div class="card" data-categoria="transporte">
                     <div class="card-icon">🚲</div>
                     <h3>Transporte Sustentável</h3>
                     <p>Use bicicleta ou transporte público quando possível</p>
+                    <button class="saiba-mais-card">Saiba mais</button>
+                    <div class="card-detalhe" style="display:none;">
+                        <p>Carona solidária e caminhadas também ajudam a reduzir a emissão de poluentes.</p>
+                    </div>
                 </div>
             </div>
         </section>

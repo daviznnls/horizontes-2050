@@ -37,10 +37,39 @@ document.addEventListener('DOMContentLoaded', () => {
         card.addEventListener('mouseleave', () => {
             card.classList.remove('highlight');
         });
-        // Clique nos cards
-        card.addEventListener('click', () => {
-            const dica = card.querySelector('h3').textContent;
-            alert(`💚 Dica selecionada: ${dica}\n\nComece hoje mesmo a aplicar esta prática sustentável!`);
+    });
+
+    // Filtros de categoria
+    const filtroBtns = document.querySelectorAll('.filtro-btn');
+    filtroBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filtroBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const categoria = btn.getAttribute('data-categoria');
+            cards.forEach(card => {
+                if (categoria === 'todas' || card.getAttribute('data-categoria') === categoria) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // Botão "Saiba mais" nos cards
+    const saibaMaisBtns = document.querySelectorAll('.saiba-mais-card');
+    saibaMaisBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const card = btn.closest('.card');
+            const detalhe = card.querySelector('.card-detalhe');
+            if (detalhe.style.display === 'none' || detalhe.style.display === '') {
+                detalhe.style.display = 'block';
+                btn.textContent = 'Fechar';
+            } else {
+                detalhe.style.display = 'none';
+                btn.textContent = 'Saiba mais';
+            }
         });
     });
 
